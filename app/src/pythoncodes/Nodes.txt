@@ -1,0 +1,65 @@
+{'id': 44, 'name': 'Jl. Ahmad Yani - Jl. Pemuda - Jl. Pramuka', 'digitCode': '1000', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-16T09:46:29.385Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 45, 'name': 'Jl. Ahmad Yani - Jl. Utan Kayu (RAWAMANGUN GOLF)', 'digitCode': '1100', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-16T09:46:31.879Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 46, 'name': 'Jl. DI Pandjaitan - Jl. Kali Malang (TRIKORA)', 'digitCode': '1200', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-16T09:46:34.141Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 47, 'name': 'Jl. MT Harnoyo - Sutoyo (CAWANG UKI)', 'digitCode': '1300', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-16T09:46:36.069Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 48, 'name': 'Jl. Gatot Subroto - Jl. Supomo (PANCORAN)', 'digitCode': '1400', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-16T09:46:37.425Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 49, 'name': 'Jl. Gatot Subroto - Jl. Rasuna Said (KUNINGAN)', 'digitCode': '1500', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-16T09:46:39.858Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 50, 'name': 'Jl. S Parman – Jl. KS Tubun – Jl. Gatot Subroto (SLIPI)', 'digitCode': '1600', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-16T09:46:41.987Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 51, 'name': 'Jl. S. Parman - Jl. Tomang Raya (TOMANG)', 'digitCode': '1700', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-16T09:46:44.446Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 52, 'name': 'Jl. Kyai Tapa - Jl. Daan Mogot (GROGOL)', 'digitCode': '1800', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-16T09:46:46.412Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 53, 'name': 'Jl. Jembatan Dua Raya - Jl. Tubagus Angke (JEMBATAN 2)', 'digitCode': '1900', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-16T09:46:49.245Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 54, 'name': 'Jl. Perniagaan Raya - Jl. Pasar Pagi Flyover (JEMBATAN 5)', 'digitCode': '2000', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-16T09:46:51.408Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 55, 'name': 'Jl. Mangga Dua - Jl. Gunung Sahari (MANGGA DUA)', 'digitCode': '2100', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-16T09:46:53.443Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 56, 'name': 'Jl. Gunung Sahari - Jl. Pangeran Jayakarta (JEMBATAN MERAH)', 'digitCode': '2200', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-16T09:46:55.026Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 57, 'name': 'Jl. Gunung Sahari - Jl. Mangga Besar (KARTINI)', 'digitCode': '2300', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-16T09:46:56.715Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 58, 'name': 'Jl. Gunung Sahari - Jl. Angkasa (TL PINTU BESI)', 'digitCode': '2400', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-16T09:46:58.298Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 59, 'name': 'Jl. Gunung Sahari - Jl. Dr Sutomo (TL MBAL)', 'digitCode': '2500', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-16T09:47:00.419Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 60, 'name': 'Jl. Gunung Sahari - Jl. Wahidin (WAHIDIN)', 'digitCode': '2600', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-16T09:47:02.262Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 61, 'name': 'Jl. Senen Raya - Jl. Kwitang (SENEN)', 'digitCode': '2700', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-16T09:47:06.195Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 62, 'name': 'Jl. Perintis Kemerdekaan - Jl. Letjen Suprapto (COCA COLA)', 'digitCode': '2800', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-16T09:47:07.794Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 63, 'name': 'Jl. Ahmad Yani - Jl. Haji Ten (HAJI TEN)', 'digitCode': '2900', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-16T09:47:10.416Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 1, 'name': 'Jl. Jembatan III - Jl. Pluit Raya (PLUIT JUNCTION)', 'digitCode': '3000', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-15T13:15:52.000Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 2, 'name': 'Jl. Jembatan III - Jl. Bandengan (JEMBATAN 3)', 'digitCode': '3100', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-15T13:22:19.000Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 3, 'name': 'Jl. Amir Hamzah - Jl. Daan Mogot (CENGKARENG)', 'digitCode': '3200', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-15T13:24:41.000Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 4, 'name': 'Jl. Amir Hamzah - Jl. Kembangan Raya (AMIR HAMZAH)', 'digitCode': '3300', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-15T13:27:36.000Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 5, 'name': 'Jl. Pos Pengumben - Jl. Suharso (POS PENGUMBEN)', 'digitCode': '3400', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-15T13:30:21.000Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 6, 'name': 'Jl. TB. Simatupang - Jl. Kartini (PONDOK INDAH)', 'digitCode': '3500', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-15T13:32:34.000Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 7, 'name': 'Jl. Fatmawati - Jl. TB Simatupang (RS FATMAWATI)', 'digitCode': '3600', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-15T13:34:55.000Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 8, 'name': 'Jl. Pasar Minggu - Jl. Raya Kalibata (MAKAM KALIBATA)', 'digitCode': '3700', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-15T13:37:33.000Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 9, 'name': 'Jl. Pasar Minggu - Jl. Duren Tiga (DUREN TIGA)', 'digitCode': '3800', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-15T13:39:04.000Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 10, 'name': 'Jl. Pancoran WESTBOUND (TIMUR) - Jl. Raya Pasar Minggu (PERDATAM)', 'digitCode': '3900', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-15T13:41:29.000Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 11, 'name': 'Jl. Raya Bogor -Jl. Pondok Gede (HEK)', 'digitCode': '4000', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-15T13:43:02.000Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 12, 'name': 'Jl. Bulak Rantai - Jl. Raya Bogor (BULAK RANTAI)', 'digitCode': '4100', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-15T13:44:46.000Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 13, 'name': 'Jl. Jend Sutoyo -Jl. Dewi Sartika (PGC)', 'digitCode': '4200', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-15T13:46:05.000Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 14, 'name': 'Jl. Dewi Sartika - Jl. Otto Iskandardinata (CAWANG KOMPOR)', 'digitCode': '4300', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-15T13:47:51.000Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 15, 'name': 'Jl. Otista - Jl. Cawang Baru (OTISTA 1)', 'digitCode': '4400', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-15T13:49:28.000Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 16, 'name': 'Jl. Otista - Jl. Cipinang Cempedak Raya (OTISTA 2)', 'digitCode': '4500', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-15T13:52:10.000Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 17, 'name': 'Jl. Otista - Jl. Otista 3 (OTISTA 3)', 'digitCode': '4600', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-15T13:53:20.000Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 18, 'name': 'Jl. Sugiono - Jl. Raden Inten (MCD RADEN INTEN)', 'digitCode': '4700', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-15T13:54:31.000Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 19, 'name': 'Jl. Perintis Kemerdekaan (PERINTIS KELAPA GADING)', 'digitCode': '4800', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-15T13:56:01.000Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 20, 'name': 'Jl. Yos Sudarso - Jl.Sulawesi (ENGGANO)', 'digitCode': '4900', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-01-15T13:58:36.000Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 64, 'name': 'TL. GREEN MANSION', 'digitCode': '5000', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-02-03T15:22:46.547Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 65, 'name': 'TL. GREEN GARDEN 1', 'digitCode': '5100', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-02-03T15:22:49.380Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 66, 'name': 'TL. GREEN GARDEN SPBU', 'digitCode': '5200', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-02-03T15:22:51.081Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 67, 'name': 'TL. KEDOYA', 'digitCode': '5300', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-02-03T15:22:53.767Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 68, 'name': 'TL. SUNRISE GARDEN', 'digitCode': '5400', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-02-03T15:22:56.408Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 69, 'name': 'TL. DURI KEPA', 'digitCode': '5500', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-02-03T15:22:57.768Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 70, 'name': 'TL. RELASI', 'digitCode': '5600', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-02-03T15:23:00.425Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 71, 'name': 'TL. RS. MEDIKA', 'digitCode': '5700', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-02-03T15:23:03.093Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 72, 'name': 'TL. PERMATA HIJAU', 'digitCode': '5800', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-02-03T15:23:05.413Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 73, 'name': 'TL. MALL PONDOK INDAH', 'digitCode': '5900', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-02-03T15:23:08.570Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 74, 'name': 'TL. BUNDARAN PONDOK INDAH', 'digitCode': '6000', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-02-03T15:23:11.285Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 75, 'name': 'TL. FEDEX', 'digitCode': '6100', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-02-03T15:23:13.436Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 76, 'name': 'TL. PEMADAM', 'digitCode': '6200', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-02-03T15:23:17.245Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 77, 'name': 'TL. TUGAS', 'digitCode': '6300', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-02-03T15:23:21.013Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 78, 'name': 'TL. JAMBUL', 'digitCode': '6400', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-02-03T15:23:23.243Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 79, 'name': 'TL. PASAR REBO', 'digitCode': '6500', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-02-03T15:23:25.307Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 80, 'name': 'TL. RINDAM', 'digitCode': '6600', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-02-03T15:23:29.734Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 81, 'name': 'TL. SWADAYA', 'digitCode': '6700', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-02-03T15:23:31.862Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 82, 'name': 'TL. BALADEWA', 'digitCode': '6800', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-02-03T15:23:35.229Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 83, 'name': 'TL. BKT', 'digitCode': '6900', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-02-03T15:23:37.817Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 84, 'name': 'TL. BUARAN', 'digitCode': '7000', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-02-03T15:23:40.228Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 85, 'name': 'TL. KLENDER', 'digitCode': '7100', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-02-03T15:23:42.313Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 86, 'name': 'TL. KODIM', 'digitCode': '7200', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-02-03T15:23:48.358Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 87, 'name': 'TL. KAMPUNG DUKUH', 'digitCode': '7300', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-02-03T15:23:52.348Z', 'nodeType': {'id': 1, 'name': 'Junction'}}
+{'id': 88, 'name': 'TL. GARUDA TMII', 'digitCode': '7400', 'isActive': True, 'actionBy': 483, 'actionTime': '2025-02-03T15:23:54.099Z', 'nodeType': {'id': 1, 'name': 'Junction'}}

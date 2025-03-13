@@ -22,8 +22,9 @@ export class CamsettingService {
       );
       if (!response.ok) throw new UnauthorizedException();
       const data = await response.json();
+      return data;
       //const biosIds = data.map((item) => item.biosId);
-      return this.pythonService.runPythonScript(data, 'Cameras');
+      // return this.pythonService.runPythonScript(data, 'Cameras');
     } catch (error) {
       console.error(
         'Error occurred while fetching data or running Python script:',
@@ -47,7 +48,8 @@ export class CamsettingService {
       if (!response.ok) throw new UnauthorizedException();
 
       const data = await response.json();
-      return this.pythonService.runPythonScript(data, 'Nodes');
+      return data;
+      // return this.pythonService.runPythonScript(data, 'Nodes');
     } catch (error) {
       console.error(
         'Error occurred while fetching data or running Python script:',
@@ -70,7 +72,8 @@ export class CamsettingService {
       if (!response.ok) throw new UnauthorizedException();
 
       const data = await response.json();
-      return this.pythonService.runPythonScript(data, 'Sub-Nodes');
+      return data;
+      // return this.pythonService.runPythonScript(data, 'Sub-Nodes');
     } catch (error) {
       console.error(
         'Error occurred while fetching data or running Python script:',

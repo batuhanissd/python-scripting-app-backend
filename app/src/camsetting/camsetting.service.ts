@@ -2,6 +2,8 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { TokenDto } from './dto/token.dto';
 import { PythonScriptService } from './pythonscriptservice.service';
+import * as fs from 'fs';
+import { resolve } from 'path';
 
 @Injectable()
 export class CamsettingService {
@@ -79,6 +81,37 @@ export class CamsettingService {
         'Error occurred while fetching data or running Python script:',
       );
       throw error;
+    }
+  }
+
+  async getLogs(): Promise<any> {
+    try {
+      const logsDir = resolve(process.cwd(), 'logs');
+      const filePath = resolve(logsDir, 'script_logs.txt');
+      const fileData = await fs.promises.readFile(filePath, 'utf-8');
+
+      // STDOUT kısmındaki tüm logları ayırıyoruz
+      const logsSections = fileData.split('STDOUT:').slice(1); // İlk 'STDOUT:'dan sonrasını alıyoruz
+
+      const allLogs = logsSections
+        .map((logSection) => {
+          // Her bir log kısmını işlerken, STDERR kısmına kadar olan kısmı alıyoruz
+          const logData = logSection.split('STDERR:')[0].trim();
+
+          // Logu JSON'a dönüştürme
+          try {
+            return JSON.parse(logData);
+          } catch (error) {
+            console.error('Error parsing log data:', error);
+            return null; // Eğer parse edilemezse null dönebiliriz
+          }
+        })
+        .filter((log) => log !== null); // Null olmayanları filtrele
+
+      return allLogs;
+    } catch (error) {
+      console.error('Error reading or parsing the log file:', error);
+      throw new Error('Failed to retrieve script logs');
     }
   }
 }

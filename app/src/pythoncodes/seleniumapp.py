@@ -9,73 +9,64 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-# stdout'u UTF-8 olarak ayarlıyoruz
+# stdout'u UTF-8 olarak ayarla
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
-# Komut satırından JSON formatında IP listesi al ve listeye çevir
+# Komut satırından JSON formatında IP listesi al
 try:
     ipAddressArg = sys.argv[1]  # Komut satırından argümanı al
     bios_ip_list = json.loads(ipAddressArg)  # JSON verisini listeye çevir
 
-    # Eğer gelen veri bir liste değilse, hata fırlat
-    if not isinstance(bios_ip_list, list):
-        raise ValueError("Gelen JSON bir liste değil!")
-
-    # Her elemanın bir sözlük (dict) olup olmadığını kontrol et
-    if not all(isinstance(item, dict) and "ipAddress" in item for item in bios_ip_list):
-        raise ValueError("Her eleman bir sözlük olmalı ve 'ipAddress' anahtarı içermelidir!")
+    # Gelen veriyi doğrula
+    if not isinstance(bios_ip_list, list) or not all(isinstance(item, dict) and "ipAddress" in item for item in bios_ip_list):
+        raise ValueError("Geçersiz JSON formatı!")
 
 except (IndexError, json.JSONDecodeError, ValueError) as e:
-    print(f"Hatalı giriş verisi! Lütfen geçerli bir JSON formatı girin. Hata: {e}")
+    print(json.dumps({"error": f"Hatalı giriş verisi: {str(e)}"}))
     sys.exit(1)
 
 # Firefox için başsız seçenekler
 firefox_options = Options()
-firefox_options.add_argument("--headless")  # Tarayıcıyı arka planda çalıştırır
+firefox_options.add_argument("--headless")  # Arka planda çalıştır
+firefox_options.binary_location = r'C:\Program Files\Mozilla Firefox\firefox.exe'
 
-# Firefox binary yolunu belirtmek için raw string kullan
-firefox_options.binary_location = r'C:\Program Files\Mozilla Firefox\firefox.exe'  # Raw string ile doğru bir yol belirt
+# GeckoDriver yolu
+driver_path = r"D:\ProgramFiles\GeckoDriver\geckodriver.exe"
 
-# GeckoDriver yolu (Kendi sistemine göre güncelle)
-driver_path = r"D:\ProgramFiles\GeckoDriver\geckodriver.exe"  # raw string kullanımı
+# Logları saklamak için liste
+log_results = []
 
 # Her IP adresi için işlemi gerçekleştir
 for item in bios_ip_list:
-    ip_address = item["ipAddress"]  # IP adresini al
+    ip_address = item["ipAddress"]
+    start_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     
-    print(f"\nBağlanıyor: {ip_address}")
-
-    # Selenium WebDriver başlat
     driver = webdriver.Firefox(service=Service(driver_path), options=firefox_options)
+    result = {"ipAddress": ip_address, "startTime": start_time, "status": "", "accessToken": None, "endTime": None}
     
     try:
-        driver.get(f"http://{ip_address}/")  # IP'yi parametrik hale getirdik
-        
-        wait = WebDriverWait(driver, 20)  # Maksimum 20 saniye bekler
+        driver.get(f"http://{ip_address}/")
+        wait = WebDriverWait(driver, 20)
         username_field = wait.until(EC.presence_of_element_located((By.ID, "username")))
         password_field = wait.until(EC.presence_of_element_located((By.ID, "password")))
         login_button = wait.until(EC.element_to_be_clickable((By.ID, "login-btn")))
-
-        # Kullanıcı adı ve şifreyi gir
+        
         username_field.send_keys("user2")
         password_field.send_keys("user2user2")
-
-        # Giriş butonuna tıkla
         login_button.click()
-
-        # Sayfanın yönlendirilmesi için kısa bekleme
+        
         time.sleep(3)
-
-        # localStorage'dan accessToken'i al
         access_token = driver.execute_script("return localStorage.getItem('accessToken');")
-
-        if access_token:
-            print(f"✅ {ip_address} için Access Token: {access_token}")
-        else:
-            print(f"❌ {ip_address} için Access Token bulunamadı!")
-
+        
+        result["status"] = "Success" if access_token else "Failed"
+        result["accessToken"] = access_token
     except Exception as e:
-        print(f"❌ {ip_address} için hata oluştu: {str(e)}")
-
+        result["status"] = "Error"
+        result["errorMessage"] = str(e)
     finally:
-        driver.quit()  # Tarayıcıyı her durumda kapat
+        result["endTime"] = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+        log_results.append(result)
+        driver.quit()
+
+# JSON formatında çıktı ver
+print(json.dumps(log_results, indent=4, ensure_ascii=False))

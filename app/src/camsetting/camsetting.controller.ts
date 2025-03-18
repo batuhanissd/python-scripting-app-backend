@@ -33,19 +33,19 @@ export class CamsettingController {
   @Post('/getcamera')
   async getCamera(@Headers('authorization') authHeader: string): Promise<any> {
     const tokenDto = this.extractToken(authHeader);
-    return this.camsettingService.getCamera(tokenDto);
+    return await this.camsettingService.getCamera(tokenDto);
   }
 
   @Post('/getnode')
   async getNode(@Headers('authorization') authHeader: string): Promise<any> {
     const tokenDto = this.extractToken(authHeader);
-    return this.camsettingService.getNode(tokenDto);
+    return await this.camsettingService.getNode(tokenDto);
   }
 
   @Post('/getsubnode')
   async getSubnode(@Headers('authorization') authHeader: string): Promise<any> {
     const tokenDto = this.extractToken(authHeader);
-    return this.camsettingService.getSubNode(tokenDto);
+    return await this.camsettingService.getSubNode(tokenDto);
   }
 
   @Post('/getaccesstoken')
@@ -61,6 +61,14 @@ export class CamsettingController {
     } catch (error) {
       console.error('Python script error:', error);
       return { success: false, message: error.message };
+    }
+  }
+
+  @Post('/getlogs')
+  async getLogs(@Headers('authorization') authHeader: string): Promise<any> {
+    const tokenDto = this.extractToken(authHeader);
+    if (tokenDto) {
+      return await this.camsettingService.getLogs();
     }
   }
 }

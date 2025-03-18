@@ -1,12 +1,15 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import { exec } from 'child_process';
 import { promisify } from 'util';
-import { join } from 'path';
+import { join, resolve } from 'path';
+import { writeFile, mkdir } from 'fs/promises';
 
 const execPromise = promisify(exec);
 
 @Injectable()
 export class PythonScriptService {
+  private readonly logger = new Logger(PythonScriptService.name);
+
   async runPythonScript(ipAddresses: { ipAddress: string }[]): Promise<any> {
     // ipAddresses dizisini JSON formatına dönüştürmek
     const ipAddressesArg = JSON.stringify(ipAddresses); // Doğrudan JSON string'e dönüştürülür
@@ -21,18 +24,34 @@ export class PythonScriptService {
 
     // Python betiğini çalıştırırken JSON verisini argüman olarak gönderelim
     const command = `python ${scriptPath} "${ipAddressesArg.replace(/"/g, '\\"')}"`;
-    console.log(command);
+    this.logger.log(`Executing command: ${command}`);
 
     try {
       const { stdout, stderr } = await execPromise(command, {
         encoding: 'utf-8',
       });
-      if (stderr) {
-        throw new Error(`Python error: ${stderr}`);
+
+      // Log stdout ve stderr çıktıları
+      if (stdout) {
+        this.logger.log(`Python script stdout: ${stdout}`);
       }
-      return stdout; // Python betiğinden gelen çıktıyı döndür
+      if (stderr) {
+        this.logger.error(`Python script stderr: ${stderr}`);
+      }
+
+      // Log klasörünü oluşturma (eğer yoksa)
+      const logsDir = resolve(process.cwd(), 'logs');
+      await mkdir(logsDir, { recursive: true });
+
+      // Log dosyasına yazma işlemi
+      const logFilePath = resolve(logsDir, 'script_logs.txt');
+      const logEntry = `\n=== Execution Log ===\nCommand: ${command}\nSTDOUT: ${stdout}\nSTDERR: ${stderr}\n====================\n`;
+      await writeFile(logFilePath, logEntry, { flag: 'a' });
+
+      return { stdout, stderr };
     } catch (error) {
-      throw new Error(`Error executing Python script: ${error.message}`);
+      this.logger.error(`Error executing Python script: ${error.message}`);
+      //throw new Error(`Error executing Python script: ${error.message}`);
     }
   }
 }

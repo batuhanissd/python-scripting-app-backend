@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import {
   Controller,
   Post,
@@ -51,7 +53,9 @@ export class CamsettingController {
   @Post('/getaccesstoken')
   async getAccessToken(
     @Body() body: { ipAddresses: { ipAddress: string }[] },
+    @Headers('authorization') authHeader: string,
   ): Promise<any> {
+    this.extractToken(authHeader); // eger token yoksa ya da hataliysa hata firlatir.
     const ipAddresses = body.ipAddresses;
     console.log(ipAddresses);
 

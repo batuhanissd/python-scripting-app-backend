@@ -70,3 +70,5 @@ for item in bios_ip_list:
 
 # JSON formatında çıktı ver
 print(json.dumps(log_results, indent=4, ensure_ascii=False))
+
+# python D:/staj/PythonScriptingApp/app/src/pythoncodes/seleniumapp.py "[{\"ipAddress\":\"127.0.0.1:3006\"}]"

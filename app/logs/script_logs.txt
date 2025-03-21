@@ -1,43 +1,27 @@
 
 === Execution Log ===
-Command: python D:/staj/PythonScriptingApp/app/src/pythoncodes/seleniumapp.py "[{\"ipAddress\":\"127.0.0.1:3002\"}]"
-STDOUT: [
-    {
-        "ipAddress": "127.0.0.1:3002",
-        "startTime": "2025-03-18 11:33:20",
-        "status": "Success",
-        "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIyIiwiaWQiOiJjMjA4ZWZkMS02NGYzLTQ0NTItYWRiZC04M2RjODNlNTUyOTEiLCJpYXQiOjE3NDIyODY4MDksImV4cCI6MTc0MjI5MDQwOX0.T0XMFw9CupFOc6sORWlMEKwjqKQZ894bgx7gvS1LcmM",
-        "endTime": "2025-03-18 11:33:32"
-    }
-]
-
-STDERR: 
-====================
-
-=== Execution Log ===
 Command: python D:/staj/PythonScriptingApp/app/src/pythoncodes/seleniumapp.py "[{\"ipAddress\":\"127.0.0.1:3009\"}]"
 STDOUT: [
     {
         "ipAddress": "127.0.0.1:3009",
-        "startTime": "2025-03-18 11:34:09",
+        "startTime": "2025-03-21 12:18:31",
         "status": "Error",
-        "accessToken": null,
-        "endTime": "2025-03-18 11:34:21",
+        "endTime": "2025-03-21 12:18:40",
         "errorMessage": "Message: Reached error page: about:neterror?e=connectionFailure&u=http%3A//127.0.0.1%3A3009/&c=UTF-8&d=Firefox%20127.0.0.1%3A3009%20sunucusuyla%20ba%C4%9Flant%C4%B1%20kuram%C4%B1yor.\nStacktrace:\nRemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8\nWebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:197:5\nUnknownError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:869:5\ncheckReadyState@chrome://remote/content/marionette/navigate.sys.mjs:58:24\nonNavigation@chrome://remote/content/marionette/navigate.sys.mjs:347:39\nemit@resource://gre/modules/EventEmitter.sys.mjs:148:20\nreceiveMessage@chrome://remote/content/marionette/actors/MarionetteEventsParent.sys.mjs:33:25\n"
     }
 ]
 
 STDERR: 
 ====================
+
 === Execution Log ===
 Command: python D:/staj/PythonScriptingApp/app/src/pythoncodes/seleniumapp.py "[{\"ipAddress\":\"127.0.0.1:3002\"}]"
 STDOUT: [
     {
         "ipAddress": "127.0.0.1:3002",
-        "startTime": "2025-03-19 16:22:01",
+        "startTime": "2025-03-21 12:18:53",
         "status": "Success",
-        "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIyIiwiaWQiOiJjMjA4ZWZkMS02NGYzLTQ0NTItYWRiZC04M2RjODNlNTUyOTEiLCJpYXQiOjE3NDIzOTA1MjcsImV4cCI6MTc0MjM5NDEyN30.QzXfjc2ByeUQxGl2eCtutfFEoXjK6lFvlovxPyOm5fA",
-        "endTime": "2025-03-19 16:22:11"
+        "endTime": "2025-03-21 12:19:02"
     }
 ]
 

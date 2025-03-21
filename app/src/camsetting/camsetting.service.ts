@@ -91,23 +91,22 @@ export class CamsettingService {
       const filePath = resolve(logsDir, 'script_logs.txt');
       const fileData = await fs.promises.readFile(filePath, 'utf-8');
 
-      // STDOUT kısmındaki tüm logları ayırıyoruz
-      const logsSections = fileData.split('STDOUT:').slice(1); // İlk 'STDOUT:'dan sonrasını alıyoruz
+      const logsSections = fileData.split('STDOUT:').slice(1);
 
       const allLogs = logsSections
         .map((logSection) => {
-          // Her bir log kısmını işlerken, STDERR kısmına kadar olan kısmı alıyoruz
           const logData = logSection.split('STDERR:')[0].trim();
 
-          // Logu JSON'a dönüştürme
           try {
-            return JSON.parse(logData);
+            const parsedData = JSON.parse(logData);
+
+            return Array.isArray(parsedData) ? parsedData : [parsedData];
           } catch (error) {
             console.error('Error parsing log data:', error);
-            return null; // Eğer parse edilemezse null dönebiliriz
+            return [];
           }
         })
-        .filter((log) => log !== null); // Null olmayanları filtrele
+        .flat(); // ic ice dizileri birlestirmek icin bunu kullandim
 
       return allLogs;
     } catch (error) {

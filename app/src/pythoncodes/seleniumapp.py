@@ -42,7 +42,7 @@ for item in bios_ip_list:
     start_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     
     driver = webdriver.Firefox(service=Service(driver_path), options=firefox_options)
-    result = {"ipAddress": ip_address, "startTime": start_time, "status": "", "accessToken": None, "endTime": None}
+    result = {"ipAddress": ip_address, "startTime": start_time, "status": "", "endTime": None}
     
     try:
         driver.get(f"http://{ip_address}/")
@@ -59,7 +59,7 @@ for item in bios_ip_list:
         access_token = driver.execute_script("return localStorage.getItem('accessToken');")
         
         result["status"] = "Success" if access_token else "Failed"
-        result["accessToken"] = access_token
+        #result["accessToken"] = access_token
     except Exception as e:
         result["status"] = "Error"
         result["errorMessage"] = str(e)

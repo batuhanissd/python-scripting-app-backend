@@ -1,4 +1,4 @@
-import io 
+import io
 import sys
 import json
 import time
@@ -9,34 +9,35 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-# stdout'u UTF-8 olarak ayarla
+# Set stdout to UTF-8
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
-# Komut satırından JSON formatında IP listesi al
+# Get IP list in JSON format from command line
 try:
-    ipAddressArg = sys.argv[1]  # Komut satırından argümanı al
-    bios_ip_list = json.loads(ipAddressArg)  # JSON verisini listeye çevir
+    ipAddressArg = sys.argv[1]  # Get argument from command line
+    bios_ip_list = json.loads(ipAddressArg)  # Convert JSON to list
 
-    # Gelen veriyi doğrula
+    # Validate the incoming data
     if not isinstance(bios_ip_list, list) or not all(isinstance(item, dict) and "ipAddress" in item for item in bios_ip_list):
-        raise ValueError("Geçersiz JSON formatı!")
+        raise ValueError("Invalid JSON format!")
 
 except (IndexError, json.JSONDecodeError, ValueError) as e:
-    print(json.dumps({"error": f"Hatalı giriş verisi: {str(e)}"}))
+    print(json.dumps({"error": f"Invalid input data: {str(e)}"}))
     sys.exit(1)
 
-# Firefox için başsız seçenekler
+# Firefox options for headless mode
 firefox_options = Options()
-firefox_options.add_argument("--headless")  # Arka planda çalıştır
+firefox_options.add_argument("--headless")  # Run in the background
 firefox_options.binary_location = r'C:\Program Files\Mozilla Firefox\firefox.exe'
+firefox_options.set_preference("intl.accept_languages", "en-US,en")  # English output
 
-# GeckoDriver yolu
+# GeckoDriver path
 driver_path = r"D:\ProgramFiles\GeckoDriver\geckodriver.exe"
 
-# Logları saklamak için liste
+# List to store logs
 log_results = []
 
-# Her IP adresi için işlemi gerçekleştir
+# Perform the operation for each IP address
 for item in bios_ip_list:
     ip_address = item["ipAddress"]
     start_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
@@ -59,16 +60,22 @@ for item in bios_ip_list:
         access_token = driver.execute_script("return localStorage.getItem('accessToken');")
         
         result["status"] = "Success" if access_token else "Failed"
-        #result["accessToken"] = access_token
     except Exception as e:
         result["status"] = "Error"
-        result["errorMessage"] = str(e)
+        error_message = str(e)
+        
+        if "about:neterror" in error_message:
+            error_message = "Connection error: Unable to connect to the server or invalid IP address."
+        elif "RemoteError" in error_message:
+            error_message = "Selenium RemoteError: WebDriver connection problem."
+        else:
+            error_message = f"Unexpected error: {error_message}"
+        
+        result["errorMessage"] = error_message
     finally:
         result["endTime"] = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         log_results.append(result)
         driver.quit()
 
-# JSON formatında çıktı ver
+# Output in JSON format
 print(json.dumps(log_results, indent=4, ensure_ascii=False))
-
-# python D:/staj/PythonScriptingApp/app/src/pythoncodes/seleniumapp.py "[{\"ipAddress\":\"127.0.0.1:3006\"}]"

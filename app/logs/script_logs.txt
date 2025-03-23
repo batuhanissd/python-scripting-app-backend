@@ -1,0 +1,25 @@
+
+=== Execution Log ===
+Command: python D:/staj/PythonScriptingApp/app/src/pythoncodes/seleniumapp.py "[{\"biosid\":\"1\",\"ipAddress\":\"127.0.0.1:3002\"},{\"biosid\":\"2\",\"ipAddress\":\"127.0.0.2:3004\"}]"
+STDOUT: {
+    "biosid": "1",
+    "ipAddress": "127.0.0.1:3002",
+    "startTime": "2025-03-23 16:16:53",
+    "status": "Success",
+    "endTime": "2025-03-23 16:17:04"
+}
+STDERR: 
+====================
+
+=== Execution Log ===
+Command: python D:/staj/PythonScriptingApp/app/src/pythoncodes/seleniumapp.py "[{\"biosid\":\"1\",\"ipAddress\":\"127.0.0.1:3002\"},{\"biosid\":\"2\",\"ipAddress\":\"127.0.0.2:3004\"}]"
+STDOUT: {
+    "biosid": "2",
+    "ipAddress": "127.0.0.2:3004",
+    "startTime": "2025-03-23 16:17:08",
+    "status": "Error",
+    "endTime": "2025-03-23 16:17:18",
+    "errorMessage": "Connection error: Unable to connect to the server or invalid IP address."
+}
+STDERR: 
+====================

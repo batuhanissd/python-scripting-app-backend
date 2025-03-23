@@ -1,101 +1,25 @@
 
 === Execution Log ===
-Command: python D:/staj/PythonScriptingApp/app/src/pythoncodes/seleniumapp.py "[{\"ipAddress\":\"127.0.0.1:3009\"}]"
-STDOUT: [
-    {
-        "ipAddress": "127.0.0.1:3009",
-        "startTime": "2025-03-21 12:18:31",
-        "status": "Error",
-        "endTime": "2025-03-21 12:18:40",
-        "errorMessage": "Message: Reached error page: about:neterror?e=connectionFailure&u=http%3A//127.0.0.1%3A3009/&c=UTF-8&d=Firefox%20127.0.0.1%3A3009%20sunucusuyla%20ba%C4%9Flant%C4%B1%20kuram%C4%B1yor.\nStacktrace:\nRemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8\nWebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:197:5\nUnknownError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:869:5\ncheckReadyState@chrome://remote/content/marionette/navigate.sys.mjs:58:24\nonNavigation@chrome://remote/content/marionette/navigate.sys.mjs:347:39\nemit@resource://gre/modules/EventEmitter.sys.mjs:148:20\nreceiveMessage@chrome://remote/content/marionette/actors/MarionetteEventsParent.sys.mjs:33:25\n"
-    }
-]
-
+Command: python D:/staj/PythonScriptingApp/app/src/pythoncodes/seleniumapp.py "[{\"biosid\":\"1\",\"ipAddress\":\"127.0.0.1:3002\"},{\"biosid\":\"2\",\"ipAddress\":\"127.0.0.2:3004\"}]"
+STDOUT: {
+    "biosid": "1",
+    "ipAddress": "127.0.0.1:3002",
+    "startTime": "2025-03-23 16:16:53",
+    "status": "Success",
+    "endTime": "2025-03-23 16:17:04"
+}
 STDERR: 
 ====================
 
 === Execution Log ===
-Command: python D:/staj/PythonScriptingApp/app/src/pythoncodes/seleniumapp.py "[{\"ipAddress\":\"127.0.0.1:3002\"}]"
-STDOUT: [
-    {
-        "ipAddress": "127.0.0.1:3002",
-        "startTime": "2025-03-21 12:18:53",
-        "status": "Success",
-        "endTime": "2025-03-21 12:19:02"
-    }
-]
-
-STDERR: 
-====================
-
-=== Execution Log ===
-Command: python D:/staj/PythonScriptingApp/app/src/pythoncodes/seleniumapp.py "[{\"ipAddress\":\"127.0.0.1:3002\"}]"
-STDOUT: [
-    {
-        "ipAddress": "127.0.0.1:3002",
-        "startTime": "2025-03-23 01:01:09",
-        "status": "Failed",
-        "endTime": "2025-03-23 01:01:20"
-    }
-]
-
-STDERR: 
-====================
-
-=== Execution Log ===
-Command: python D:/staj/PythonScriptingApp/app/src/pythoncodes/seleniumapp.py "[{\"ipAddress\":\"127.0.0.1:3009\"}]"
-STDOUT: [
-    {
-        "ipAddress": "127.0.0.1:3009",
-        "startTime": "2025-03-23 01:01:35",
-        "status": "Error",
-        "endTime": "2025-03-23 01:01:45",
-        "errorMessage": "Message: Reached error page: about:neterror?e=connectionFailure&u=http%3A//127.0.0.1%3A3009/&c=UTF-8&d=Firefox%20127.0.0.1%3A3009%20sunucusuyla%20ba%C4%9Flant%C4%B1%20kuram%C4%B1yor.\nStacktrace:\nRemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8\nWebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:197:5\nUnknownError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:869:5\ncheckReadyState@chrome://remote/content/marionette/navigate.sys.mjs:58:24\nonNavigation@chrome://remote/content/marionette/navigate.sys.mjs:347:39\nemit@resource://gre/modules/EventEmitter.sys.mjs:148:20\nreceiveMessage@chrome://remote/content/marionette/actors/MarionetteEventsParent.sys.mjs:33:25\n"
-    }
-]
-
-STDERR: 
-====================
-
-=== Execution Log ===
-Command: python D:/staj/PythonScriptingApp/app/src/pythoncodes/seleniumapp.py "[{\"ipAddress\":\"127.0.0.1:3002\"}]"
-STDOUT: [
-    {
-        "ipAddress": "127.0.0.1:3002",
-        "startTime": "2025-03-23 01:03:46",
-        "status": "Failed",
-        "endTime": "2025-03-23 01:03:56"
-    }
-]
-
-STDERR: 
-====================
-
-=== Execution Log ===
-Command: python D:/staj/PythonScriptingApp/app/src/pythoncodes/seleniumapp.py "[{\"ipAddress\":\"127.0.0.1:3002\"}]"
-STDOUT: [
-    {
-        "ipAddress": "127.0.0.1:3002",
-        "startTime": "2025-03-23 01:05:01",
-        "status": "Success",
-        "endTime": "2025-03-23 01:05:11"
-    }
-]
-
-STDERR: 
-====================
-
-=== Execution Log ===
-Command: python D:/staj/PythonScriptingApp/app/src/pythoncodes/seleniumapp.py "[{\"ipAddress\":\"127.0.0.1:3008\"}]"
-STDOUT: [
-    {
-        "ipAddress": "127.0.0.1:3008",
-        "startTime": "2025-03-23 01:13:27",
-        "status": "Error",
-        "endTime": "2025-03-23 01:13:37",
-        "errorMessage": "Message: Reached error page: about:neterror?e=connectionFailure&u=http%3A//127.0.0.1%3A3008/&c=UTF-8&d=Firefox%20127.0.0.1%3A3008%20sunucusuyla%20ba%C4%9Flant%C4%B1%20kuram%C4%B1yor.\nStacktrace:\nRemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8\nWebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:197:5\nUnknownError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:869:5\ncheckReadyState@chrome://remote/content/marionette/navigate.sys.mjs:58:24\nonNavigation@chrome://remote/content/marionette/navigate.sys.mjs:347:39\nemit@resource://gre/modules/EventEmitter.sys.mjs:148:20\nreceiveMessage@chrome://remote/content/marionette/actors/MarionetteEventsParent.sys.mjs:33:25\n"
-    }
-]
-
+Command: python D:/staj/PythonScriptingApp/app/src/pythoncodes/seleniumapp.py "[{\"biosid\":\"1\",\"ipAddress\":\"127.0.0.1:3002\"},{\"biosid\":\"2\",\"ipAddress\":\"127.0.0.2:3004\"}]"
+STDOUT: {
+    "biosid": "2",
+    "ipAddress": "127.0.0.2:3004",
+    "startTime": "2025-03-23 16:17:08",
+    "status": "Error",
+    "endTime": "2025-03-23 16:17:18",
+    "errorMessage": "Connection error: Unable to connect to the server or invalid IP address."
+}
 STDERR: 
 ====================

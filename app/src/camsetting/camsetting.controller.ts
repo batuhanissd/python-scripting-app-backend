@@ -50,9 +50,9 @@ export class CamsettingController {
     return await this.camsettingService.getSubNode(tokenDto);
   }
 
-  @Post('/getaccesstoken')
+  @Post('/runconfig')
   async getAccessToken(
-    @Body() body: { ipAddresses: { ipAddress: string }[] },
+    @Body() body: { ipAddresses: { biosid: string; ipAddress: string }[] },
     @Headers('authorization') authHeader: string,
   ): Promise<any> {
     this.extractToken(authHeader); // eger token yoksa ya da hataliysa hata firlatir.
@@ -76,3 +76,16 @@ export class CamsettingController {
     }
   }
 }
+
+// {
+//   "ipAddresses": [
+//     {
+//       "biosid": "1",
+//       "ipAddress": "1"
+//     },
+//     {
+//       "biosid": "2",
+//       "ipAddress": "2"
+//     }
+//   ]
+// } runconfig endpointi bu sekilde veri ile calisiyor.

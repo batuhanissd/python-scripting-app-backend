@@ -40,10 +40,11 @@ log_results = []
 # Perform the operation for each IP address
 for item in bios_ip_list:
     ip_address = item["ipAddress"]
+    biosid = item["biosid"]
     start_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     
     driver = webdriver.Firefox(service=Service(driver_path), options=firefox_options)
-    result = {"ipAddress": ip_address, "startTime": start_time, "status": "", "endTime": None}
+    result = {"biosid": biosid, "ipAddress": ip_address, "startTime": start_time, "status": "", "endTime": None}
     
     try:
         driver.get(f"http://{ip_address}/")

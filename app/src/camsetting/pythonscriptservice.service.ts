@@ -1,9 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { Injectable, Logger } from '@nestjs/common';
 import { exec } from 'child_process';
 import { promisify } from 'util';
 import { join, resolve } from 'path';
-import { writeFile, mkdir } from 'fs/promises';
+import { mkdir, appendFile } from 'fs/promises';
 
 const execPromise = promisify(exec);
 
@@ -11,7 +13,9 @@ const execPromise = promisify(exec);
 export class PythonScriptService {
   private readonly logger = new Logger(PythonScriptService.name);
 
-  async runPythonScript(ipAddresses: { ipAddress: string }[]): Promise<any> {
+  async runPythonScript(
+    ipAddresses: { biosid: string; ipAddress: string }[],
+  ): Promise<any> {
     // ipAddresses dizisini JSON formatına dönüştürmek
     const ipAddressesArg = JSON.stringify(ipAddresses); // Doğrudan JSON string'e dönüştürülür
 
@@ -44,15 +48,23 @@ export class PythonScriptService {
       const logsDir = resolve(process.cwd(), 'logs');
       await mkdir(logsDir, { recursive: true });
 
-      // Log dosyasına yazma işlemi
+      // Log dosyasının tam yolunu belirleyelim
       const logFilePath = resolve(logsDir, 'script_logs.txt');
-      const logEntry = `\n=== Execution Log ===\nCommand: ${command}\nSTDOUT: ${stdout}\nSTDERR: ${stderr}\n====================\n`;
-      await writeFile(logFilePath, logEntry, { flag: 'a' });
+
+      // stdout çıktısını JSON'a dönüştür
+      const stdoutData = JSON.parse(stdout);
+
+      // Her bir IP için logları tek dosyaya yazacağız
+      stdoutData.forEach(async (entry) => {
+        const logEntry = `\n=== Execution Log ===\nCommand: ${command}\nSTDOUT: ${JSON.stringify(entry, null, 4)}\nSTDERR: ${stderr ? stderr : ''}\n====================\n`;
+
+        // Tek bir dosyaya ekleme yapıyoruz
+        await appendFile(logFilePath, logEntry, { encoding: 'utf-8' });
+      });
 
       return { stdout, stderr };
     } catch (error) {
       this.logger.error(`Error executing Python script: ${error.message}`);
-      //throw new Error(`Error executing Python script: ${error.message}`);
     }
   }
 }

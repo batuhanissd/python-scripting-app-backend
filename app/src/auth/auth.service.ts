@@ -17,12 +17,12 @@ export class AuthService {
         },
       );
 
+      const data = await response.json();
+
       if (!response.ok) {
-        const data = await response.json();
-        throw new UnauthorizedException(data);
+        throw new UnauthorizedException(data.message);
       }
 
-      const data = await response.json();
       const accessToken: string = data.accessToken;
       return { accessToken };
     } catch (error) {

@@ -51,16 +51,24 @@ export class CamsettingController {
   }
 
   @Post('/runconfig')
-  async getAccessToken(
-    @Body() body: { ipAddresses: { biosid: string; ipAddress: string }[] },
+  async runConfig(
+    @Body()
+    body: {
+      processType: string;
+      ipAddresses: { biosid: string; ipAddress: string }[];
+    },
     @Headers('authorization') authHeader: string,
   ): Promise<any> {
     this.extractToken(authHeader); // eger token yoksa ya da hataliysa hata firlatir.
     const ipAddresses = body.ipAddresses;
+    const processType = body.processType;
     console.log(ipAddresses);
 
     try {
-      const result = await this.pythonScService.runPythonScript(ipAddresses);
+      const result = await this.pythonScService.runPythonScript(
+        processType,
+        ipAddresses,
+      );
       return { success: true, result };
     } catch (error) {
       console.error('Python script error:', error);

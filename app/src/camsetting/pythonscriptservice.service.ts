@@ -14,17 +14,35 @@ export class PythonScriptService {
   private readonly logger = new Logger(PythonScriptService.name);
 
   async runPythonScript(
+    processType: string,
     ipAddresses: { biosid: string; ipAddress: string }[],
   ): Promise<any> {
     // ipAddresses dizisini JSON formatına dönüştürmek
     const ipAddressesArg = JSON.stringify(ipAddresses); // Doğrudan JSON string'e dönüştürülür
 
+    let pythonscript;
+    switch (processType) {
+      case 'motoron':
+        pythonscript = 'phaseallmotorcycleon.py';
+        break;
+      case 'motoroff':
+        pythonscript = 'phaseallmotorcycleoff.py';
+        break;
+      case 'ftpconfig':
+        pythonscript = 'phaseallcameraftpconfig.py';
+        break;
+      case 'selenium':
+        pythonscript = 'seleniumapp.py';
+        break;
+      default:
+        throw new Error('Invalid processType selection');
+    }
     // Python script'inin tam yolunu belirleyelim
     const scriptPath = join(
       process.cwd(),
       'src',
       'pythoncodes',
-      'seleniumapp.py',
+      `${pythonscript}`,
     ).replace(/\\/g, '/');
 
     // Python betiğini çalıştırırken JSON verisini argüman olarak gönderelim

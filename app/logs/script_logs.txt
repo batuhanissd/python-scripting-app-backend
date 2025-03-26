@@ -103,3 +103,18 @@ STDOUT: {
 }
 STDERR: 
 ====================
+
+=== Execution Log ===
+Command: python D:/staj/PythonScriptingApp/app/src/pythoncodes/phaseallmotorcycleon.py "[{\"biosid\":\"10\",\"ipAddress\":\"10.5.10.31\"}]"
+STDOUT: {
+    "processType": "motoron",
+    "biosid": "10",
+    "ipAddress": "10.5.10.31",
+    "startTime": "2025-03-26 13:17:55",
+    "connectionStatus": "Error",
+    "xmlStatus": "",
+    "endTime": "2025-03-26 13:18:24",
+    "connectionErrorMessage": "Connection error: Unable to connect to the server or invalid IP address."
+}
+STDERR: 
+====================

@@ -2,13 +2,15 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { LoginDto } from './dto/login.dto';
-import { JwtPayload } from './jwt-payload.interface';
 import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
 export class AuthService {
   constructor(private jwtService: JwtService) {}
-  async login(loginDto: LoginDto): Promise<{ accessToken: string }> {
+
+  async login(
+    loginDto: LoginDto,
+  ): Promise<{ accessToken: string; PTSAuth: string }> {
     try {
       const { username, password } = loginDto;
       const response = await fetch(
@@ -26,12 +28,12 @@ export class AuthService {
       }
 
       const data = await response.json();
-      // const accessToken: string = data.accessToken;
-      if (data.accessToken) {
-        const payload: JwtPayload = { username: username };
-        const accessToken: string = this.jwtService.sign(payload);
-        return { accessToken };
-      } else throw new UnauthorizedException('Check your login credentials');
+      const PTSAuth: string = data.accessToken;
+
+      const payload: string = this.jwtService.decode(PTSAuth);
+      const accessToken: string = this.jwtService.sign(payload);
+
+      return { accessToken, PTSAuth };
     } catch (error) {
       console.error('Error during login:', error);
       throw error;

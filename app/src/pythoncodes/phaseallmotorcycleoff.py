@@ -44,11 +44,11 @@ for item in bios_ip_list:
     biosid = item.get("biosid", "Unknown") #portno icin biosid kullaniliyor ama sadece ftpde kullaniliyor. yine de ekledim silinebilir.
     start_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     
-    driver = webdriver.Firefox(service=Service(driver_path), options=firefox_options)
     result = {"processType": "motoroff", "biosid": biosid, "ipAddress": ip_address, "startTime": start_time, "connectionStatus": "", "xmlStatus": "", "endTime": None}
     session_tag = None
     
     try:
+        driver = webdriver.Firefox(service=Service(driver_path), options=firefox_options)
         driver.get(f"http://{ip_address}/")
         #username_field = driver.find_element(By.ID, "username")
         #password_field = driver.find_element(By.ID, "password")
@@ -85,9 +85,13 @@ for item in bios_ip_list:
         
         result["connectionErrorMessage"] = error_message
     finally:
-        driver.quit()
-        result["endTime"] = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        log_results.append(result)
+      if 'driver' in locals():
+          try:
+              driver.quit()
+          except Exception as quit_error:
+              result["quitError"] = f"Error quitting driver: {str(quit_error)}"
+      result["endTime"] = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+      log_results.append(result)
     
     if session_tag:
         xml_data = f"""

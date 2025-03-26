@@ -1,59 +1,104 @@
 
 === Execution Log ===
-Command: python D:/staj/PythonScriptingApp/app/src/pythoncodes/phaseallmotorcycleoff.py "[{\"biosid\":\"1\",\"ipAddress\":\"127.0.0.1:3002\"},{\"biosid\":\"1\",\"ipAddress\":\"127.0.0.1:3009\"}]"
+Command: python D:/staj/PythonScriptingApp/app/src/pythoncodes/phaseallmotorcycleon.py "[{\"biosid\":\"1\",\"ipAddress\":\"127.0.0.1:3002\"},{\"biosid\":\"2\",\"ipAddress\":\"127.0.0.2:3004\"}]"
 STDOUT: {
-    "processType": "motoroff",
+    "processType": "motoron",
     "biosid": "1",
     "ipAddress": "127.0.0.1:3002",
-    "startTime": "2025-03-25 15:13:50",
+    "startTime": "2025-03-26 12:02:11",
+    "connectionStatus": "Error",
+    "xmlStatus": "",
+    "endTime": "2025-03-26 12:02:11",
+    "connectionErrorMessage": "Unexpected error: Message: Unable to obtain driver for firefox; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location\n"
+}
+STDERR: 
+====================
+
+=== Execution Log ===
+Command: python D:/staj/PythonScriptingApp/app/src/pythoncodes/phaseallmotorcycleon.py "[{\"biosid\":\"1\",\"ipAddress\":\"127.0.0.1:3002\"},{\"biosid\":\"2\",\"ipAddress\":\"127.0.0.2:3004\"}]"
+STDOUT: {
+    "processType": "motoron",
+    "biosid": "2",
+    "ipAddress": "127.0.0.2:3004",
+    "startTime": "2025-03-26 12:02:11",
+    "connectionStatus": "Error",
+    "xmlStatus": "",
+    "endTime": "2025-03-26 12:02:11",
+    "connectionErrorMessage": "Unexpected error: Message: Unable to obtain driver for firefox; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location\n"
+}
+STDERR: 
+====================
+
+=== Execution Log ===
+Command: python D:/staj/PythonScriptingApp/app/src/pythoncodes/phaseallmotorcycleon.py "[{\"biosid\":\"1\",\"ipAddress\":\"127.0.0.1:3002\"},{\"biosid\":\"2\",\"ipAddress\":\"127.0.0.2:3004\"}]"
+STDOUT: {
+    "processType": "motoron",
+    "biosid": "1",
+    "ipAddress": "127.0.0.1:3002",
+    "startTime": "2025-03-26 12:02:38",
     "connectionStatus": "Success",
     "xmlStatus": "Failed (404)",
-    "endTime": "2025-03-25 15:14:12",
+    "endTime": "2025-03-26 12:02:57",
     "xmlErrorMessage": "Failed to sent xmldata"
 }
 STDERR: 
 ====================
 
 === Execution Log ===
-Command: python D:/staj/PythonScriptingApp/app/src/pythoncodes/phaseallmotorcycleoff.py "[{\"biosid\":\"1\",\"ipAddress\":\"127.0.0.1:3002\"},{\"biosid\":\"1\",\"ipAddress\":\"127.0.0.1:3009\"}]"
+Command: python D:/staj/PythonScriptingApp/app/src/pythoncodes/phaseallmotorcycleon.py "[{\"biosid\":\"1\",\"ipAddress\":\"127.0.0.1:3002\"},{\"biosid\":\"2\",\"ipAddress\":\"127.0.0.2:3004\"}]"
 STDOUT: {
-    "processType": "motoroff",
-    "biosid": "1",
-    "ipAddress": "127.0.0.1:3009",
-    "startTime": "2025-03-25 15:14:12",
+    "processType": "motoron",
+    "biosid": "2",
+    "ipAddress": "127.0.0.2:3004",
+    "startTime": "2025-03-26 12:02:57",
     "connectionStatus": "Error",
     "xmlStatus": "",
-    "endTime": "2025-03-25 15:14:27",
+    "endTime": "2025-03-26 12:03:11",
     "connectionErrorMessage": "Connection error: Unable to connect to the server or invalid IP address."
 }
 STDERR: 
 ====================
 
 === Execution Log ===
-Command: python D:/staj/PythonScriptingApp/app/src/pythoncodes/phaseallmotorcycleon.py "[{\"biosid\":\"1\",\"ipAddress\":\"127.0.0.1:3002\"},{\"biosid\":\"1\",\"ipAddress\":\"127.0.0.1:3009\"}]"
+Command: python D:/staj/PythonScriptingApp/app/src/pythoncodes/phaseallmotorcycleoff.py "[{\"biosid\":\"1\",\"ipAddress\":\"127.0.0.1:3002\"},{\"biosid\":\"2\",\"ipAddress\":\"127.0.0.2:3004\"}]"
 STDOUT: {
-    "processType": "motoron",
+    "processType": "motoroff",
     "biosid": "1",
     "ipAddress": "127.0.0.1:3002",
-    "startTime": "2025-03-25 15:14:45",
-    "connectionStatus": "Success",
-    "xmlStatus": "Failed (404)",
-    "endTime": "2025-03-25 15:15:03",
-    "xmlErrorMessage": "Failed to sent xmldata"
+    "startTime": "2025-03-26 12:04:27",
+    "connectionStatus": "Error",
+    "xmlStatus": "",
+    "endTime": "2025-03-26 12:04:27",
+    "connectionErrorMessage": "Unexpected error: Message: Unable to obtain driver for firefox; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location\n"
 }
 STDERR: 
 ====================
 
 === Execution Log ===
-Command: python D:/staj/PythonScriptingApp/app/src/pythoncodes/phaseallmotorcycleon.py "[{\"biosid\":\"1\",\"ipAddress\":\"127.0.0.1:3002\"},{\"biosid\":\"1\",\"ipAddress\":\"127.0.0.1:3009\"}]"
+Command: python D:/staj/PythonScriptingApp/app/src/pythoncodes/phaseallmotorcycleoff.py "[{\"biosid\":\"1\",\"ipAddress\":\"127.0.0.1:3002\"},{\"biosid\":\"2\",\"ipAddress\":\"127.0.0.2:3004\"}]"
+STDOUT: {
+    "processType": "motoroff",
+    "biosid": "2",
+    "ipAddress": "127.0.0.2:3004",
+    "startTime": "2025-03-26 12:04:27",
+    "connectionStatus": "Error",
+    "xmlStatus": "",
+    "endTime": "2025-03-26 12:04:27",
+    "connectionErrorMessage": "Unexpected error: Message: Unable to obtain driver for firefox; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location\n"
+}
+STDERR: 
+====================
+
+=== Execution Log ===
+Command: python D:/staj/PythonScriptingApp/app/src/pythoncodes/phaseallmotorcycleon.py "[{\"biosid\":\"1\",\"ipAddress\":\"127.0.0.1:3002\"}]"
 STDOUT: {
     "processType": "motoron",
     "biosid": "1",
-    "ipAddress": "127.0.0.1:3009",
-    "startTime": "2025-03-25 15:15:03",
+    "ipAddress": "127.0.0.1:3002",
+    "startTime": "2025-03-26 12:08:35",
     "connectionStatus": "Error",
     "xmlStatus": "",
-    "endTime": "2025-03-25 15:15:19",
+    "endTime": "2025-03-26 12:08:50",
     "connectionErrorMessage": "Connection error: Unable to connect to the server or invalid IP address."
 }
 STDERR: 

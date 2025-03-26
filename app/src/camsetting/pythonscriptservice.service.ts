@@ -15,10 +15,10 @@ export class PythonScriptService {
 
   async runPythonScript(
     processType: string,
-    ipAddresses: { biosid: string; ipAddress: string }[],
+    selectedCamera: { biosid: string; ipAddress: string }[],
   ): Promise<any> {
-    // ipAddresses dizisini JSON formatına dönüştürmek
-    const ipAddressesArg = JSON.stringify(ipAddresses); // Doğrudan JSON string'e dönüştürülür
+    // selectedCamera dizisini JSON formatına dönüştürmek
+    const selectedCameraArg = JSON.stringify(selectedCamera); // Doğrudan JSON string'e dönüştürülür
 
     let pythonscript;
     switch (processType) {
@@ -46,7 +46,7 @@ export class PythonScriptService {
     ).replace(/\\/g, '/');
 
     // Python betiğini çalıştırırken JSON verisini argüman olarak gönderelim
-    const command = `python ${scriptPath} "${ipAddressesArg.replace(/"/g, '\\"')}"`;
+    const command = `python ${scriptPath} "${selectedCameraArg.replace(/"/g, '\\"')}"`;
     this.logger.log(`Executing command: ${command}`);
 
     try {

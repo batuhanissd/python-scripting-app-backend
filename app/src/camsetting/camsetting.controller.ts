@@ -6,10 +6,12 @@ import {
   BadRequestException,
   Headers,
   Body,
+  UseGuards,
 } from '@nestjs/common';
 import { CamsettingService } from './camsetting.service';
 import { TokenDto } from './dto/token.dto';
 import { PythonScriptService } from './pythonscriptservice.service';
+import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 
 @Controller('camsetting')
 export class CamsettingController {
@@ -51,23 +53,24 @@ export class CamsettingController {
   }
 
   @Post('/runconfig')
+  @UseGuards(JwtAuthGuard)
   async runConfig(
     @Body()
     body: {
       processType: string;
-      ipAddresses: { biosid: string; ipAddress: string }[];
+      selectedCamera: { biosid: string; ipAddress: string }[];
     },
     @Headers('authorization') authHeader: string,
   ): Promise<any> {
     this.extractToken(authHeader); // eger token yoksa ya da hataliysa hata firlatir.
-    const ipAddresses = body.ipAddresses;
+    const selectedCamera = body.selectedCamera;
     const processType = body.processType;
-    console.log(ipAddresses);
+    console.log(selectedCamera);
 
     try {
       const result = await this.pythonScService.runPythonScript(
         processType,
-        ipAddresses,
+        selectedCamera,
       );
       return { success: true, result };
     } catch (error) {
@@ -77,6 +80,7 @@ export class CamsettingController {
   }
 
   @Post('/getlogs')
+  @UseGuards(JwtAuthGuard)
   async getLogs(@Headers('authorization') authHeader: string): Promise<any> {
     const tokenDto = this.extractToken(authHeader);
     if (tokenDto) {
@@ -84,16 +88,3 @@ export class CamsettingController {
     }
   }
 }
-
-// {
-//   "ipAddresses": [
-//     {
-//       "biosid": "1",
-//       "ipAddress": "1"
-//     },
-//     {
-//       "biosid": "2",
-//       "ipAddress": "2"
-//     }
-//   ]
-// } runconfig endpointi bu sekilde veri ile calisiyor.
